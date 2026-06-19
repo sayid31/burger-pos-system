@@ -1,0 +1,2459 @@
+:root{
+    --Merah: rgb(214, 40, 40);
+    --Kuning-Emas:rgb(247, 127, 0);
+    --Hijau-Segar: rgb(112, 193, 179);
+    --Cokelat-Roti: rgb(107, 66, 38);
+    --Putih-Bersih: rgb(248, 249, 250);
+    --MerahKuning: linear-gradient(135deg, rgb(214, 40, 40), rgb(247, 127, 0));
+    --KuningHijauSegar: linear-gradient(180deg, rgb(247, 127, 0), rgb(112, 193, 179));
+    --hijauPutih: linear-gradient(180deg, rgb(112, 193, 179), rgb(248, 249, 250));
+    --cokelat-merahgelap: linear-gradient(160deg, rgb(107, 66, 38), rgb(214, 40, 40));
+    --cokelat-putih: linear-gradient(180deg, rgb(107, 66, 38), rgb(248, 249, 250));
+    --hijauLime: linear-gradient(160deg, rgb(112, 193, 179), rgb(173, 255, 47));
+    --merahBataEmas: linear-gradient(135deg, rgb(178, 34, 34), rgb(255, 215, 0));
+    --cokelatKopiKaramel: linear-gradient(160deg, rgb(78, 52, 46), rgb(255, 140, 0));
+    --hijauSegarDaun: linear-gradient(180deg, rgb(112, 193, 179), rgb(46, 139, 87));
+    --emasPutih: linear-gradient(135deg, rgb(255, 215, 0), rgb(250, 250, 240));
+    --merahHitamElegan: linear-gradient(135deg, rgb(214, 40, 40), rgb(34, 34, 34));
+    --merahHitam: linear-gradient(180deg, rgb(214, 40, 40), rgb(34, 34, 34));
+    --emasKrem: linear-gradient(135deg, rgb(247, 127, 0), rgb(255, 239, 213));
+    --hijauLime: linear-gradient(160deg, rgb(112, 193, 179), rgb(173, 255, 47));
+    --cokelatEmas: linear-gradient(135deg, rgb(107, 66, 38), rgb(247, 127, 0));
+    --merahOranye: linear-gradient(135deg, rgb(214, 40, 40), rgb(255, 87, 34));
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    outline: none;
+    text-decoration: none;
+    border: none;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* html,body{
+    overflow-x: hidden;
+} */
+
+.section{
+    padding: 6rem 3rem;
+}
+
+/* navbar start */
+.navbarContainer{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+}
+.navbar{
+    background: var(--MerahKuning);
+    padding:.5rem 5rem;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, .1);
+    position: relative;
+}
+
+.navbar .navbar-nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-nav h1{
+    font-weight: 900;
+    font-family: "Anton", sans-serif;
+    font-size: 1.5rem;
+}
+
+.efek{
+    background: linear-gradient(90deg, var(--Putih-Bersih) 0%, var(--Hijau-Segar) 50%, var(--Putih-Bersih) 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: efekColor 5s linear infinite;
+}
+
+@keyframes efekColor{
+    from{background-position: 0% 0;  }
+    to{background-position: 200% 0;}
+}
+
+.navbar-nav .link-nav{
+    display: flex;
+    align-items: center;
+    gap: 1.3rem;
+}
+
+.link-nav a{
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--Putih-Bersih);
+    position: relative;
+}
+
+.link-nav a::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    background-color: var(--Putih-Bersih);
+    width: 100%;
+    height: 1.1px;
+    opacity: 0;
+    transform: scaleX(0);
+    transition: .3s ease;
+}
+
+.link-nav a:hover::after{
+    opacity: 1;
+    transform: scaleX(1);
+}
+
+.navbar-nav .btn-nav{
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    position: relative;
+}
+
+.btn-nav .button-nav{
+    background-color: transparent;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--Cokelat-Roti);
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.btn-nav .button-nav:hover{
+    transform: scale(1.2);
+}
+
+ .btn-nav .btn-clear{
+    display: none;
+}
+
+.qtyOrder{
+    position: absolute;
+    font-size: 1rem;
+    color: var(--Putih-Bersih);
+    top: -6px;
+    right: -5px;
+}
+
+
+/* shopping chart */
+.shoppingCart{
+    position: absolute;
+    background: var(--cokelat-merahgelap);
+    width: 400px;
+    height: calc(100vh - 52.5px);
+    top: 52.5px;
+    right: 0;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: transform 1s ease;
+    overflow-y: auto;
+}
+
+.shoppingCart.show{
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.rowShoppingCart{
+    display: grid;
+    margin-bottom: 1rem;
+}
+
+
+.shoppingcart-card{
+    display: flex;
+    align-items: center;
+    gap: .3rem;
+    padding: .5rem 1.5rem;
+}
+
+.checkboxItem{
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.data-shoppingCart h4{
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--Kuning-Emas);
+}
+
+.data-shoppingCart span{
+    font-size: .8rem;
+    font-size: 700;
+    color: var(--Putih-Bersih);
+}
+
+.numberOfProducts{
+    border: 1px solid var(--Kuning-Emas);
+    width: 90px;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+}
+
+.numberOfProducts button{
+    background-color: transparent;
+    color: var(--Putih-Bersih);
+    font-size: .8rem;
+    font-weight: 600;
+    padding-inline: .3rem;
+    cursor: pointer;
+}
+
+#plus{
+    border-right: 1px solid var(--Kuning-Emas);
+}
+
+#minus{
+    border-left: 1px solid var(--Kuning-Emas);
+}
+
+.imgShoppingCart{
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+}
+.imgShoppingCart img{
+    width: 100%;
+    height: 100%;
+}
+
+.line{
+    border: 1.3px solid var(--Kuning-Emas);
+    margin-inline: 3rem;
+}
+
+.chekOut{
+    position: sticky;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    padding: .5rem;
+    display: none;
+}
+
+.chekOut.active{
+    display: block;
+}
+
+/* checkout */
+.cekout-card{
+    background: var(--hijauPutih);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: .8rem 1.3rem;
+    border-radius: 8px;
+}
+
+.ceklistAll{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.ceklistAll input{
+    width: 13px;
+    height: 13px;
+    cursor: pointer;
+}
+
+.ceklistAll span{
+    font-size: .8rem;
+    font-weight: 600;
+    color: var(--Cokelat-Roti);
+}
+
+.total{
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+}
+
+.totalAll{
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--Kuning-Emas);
+}
+
+#orderItem{
+    background-color: var(--Merah);
+    border-radius: 8px;
+    padding: .2rem .6rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--Kuning-Emas);
+}
+
+
+/* home */
+.containerHome{
+    background-color: var(--Kuning-Emas);
+    overflow: hidden;
+}
+
+.rowHome{
+    position: relative;
+    display: grid;
+    gap: 1.5rem;
+}
+
+.rowHome h1{
+    font-size: 3rem;
+    font-weight: 900;
+    background: var(--hijauPutih);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    text-align: center;
+}
+
+.img{
+    position: relative;
+    display: grid;
+    justify-items: center;
+    justify-self: center;
+}
+
+.shape{
+    width: 250px;
+    height: 250px;
+}
+
+.move{
+    position: absolute;
+}
+
+.burger{
+    width: 400px;
+    top: -6rem;
+}
+
+.cucumber{
+    width: 90px;
+    top: -1rem;
+    left: -8rem;
+}
+
+.vegetable{
+    width: 100px;
+    top: -1.5rem;
+    right: -6.5rem;
+}
+
+.tomatos{
+    width: 90px;
+    bottom: -1.5rem;
+    left: -4rem;
+    rotate: 45deg;
+}
+
+.meat{
+    width: 100px;
+    bottom: -2rem;
+    right: -4rem;
+}
+
+.saus{
+    width: 500px;
+}
+
+.sticker{
+    position: absolute;
+    width: 100px;
+    right: 1rem;
+    bottom: -1rem;
+    rotate: 30deg;
+}
+
+.text{
+    text-align: center;
+}
+
+.text p{
+    font-size: 1.2rem;
+    color: var(--Putih-Bersih);
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.text .button{
+    background-color: var(--Merah);
+    border-radius: 5px;
+    padding: .4rem .8rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--Putih-Bersih);
+    transition: .3s ease;
+}
+
+.button:hover{
+    background-color: rgb(188, 41, 41);
+}
+
+/* popular */
+.containerPoppular{
+    background: var(--hijauPutih);
+}
+
+.rowPopular h1{
+    font-size: 3rem;
+    font-weight: 900;
+    background: var(--cokelat-merahgelap);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    line-height: 3rem;
+}
+
+.popular-swiper{
+    padding-top: 1rem;
+}
+
+.popular-card{
+    width: 270px;
+    display: grid;
+    row-gap: 1.5rem;
+}
+
+.popular-img{
+    position: relative;
+    display: grid;
+    justify-items: center;
+    justify-self: center;
+}
+
+.popular-card img{
+    position: absolute;
+}
+
+.popular-shape{
+    width: 195px;
+    height: 195px;
+    background: var(--cokelat-putih);
+    border-radius: 50%;
+    clip-path: inset(50% 0 0);
+}
+
+.burger-menu{
+    width: 180px;
+    top: 1rem;
+}
+
+.vegetables-1,
+.vegetables-2{
+    width: 120px;
+    transition: transform .5s .1s;
+}
+
+.vegetables-1{
+    left: -3rem;
+    top: 1.5rem;
+}
+
+.vegetables-2{
+    right: -3rem;
+    top :6rem;
+    rotate: 180deg;
+}
+
+.popular-data{
+    text-align: center;
+}
+
+.popular-data h2{
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--Cokelat-Roti);
+}
+
+.popular-data p{
+    font-size: .9rem;
+    font-weight: 300;
+    color: var(--Cokelat-Roti);
+    margin-bottom: .7rem;
+}
+
+.popular-data a{
+    background-color: var(--Merah);
+    border-radius: 5px;
+    padding: .3rem .6rem;
+    font-size: .9rem;
+    font-weight: 700;
+    color: var(--Putih-Bersih);
+}
+
+.popular-card:hover .vegetables-2{
+    transform: translate(-.5rem, -.25rem);
+}
+
+.popular-card:hover .vegetables-1{
+    transform: translate(-.5rem, -.25rem);
+}
+
+.swiper{
+    overflow: hidden;
+    margin-inline: initial;
+}
+
+/* about */
+.containerAbout{
+    background: var(--Cokelat-Roti);
+}
+
+.rowAbout{
+    display: grid;
+    grid-template-columns:  1fr 1.5fr;
+    gap: .5rem;
+}
+
+.imgAbout{
+    text-align: center;
+}
+
+.aboutimg-tittle{
+    width: 400px;
+    top: -1rem;
+    right: -.5rem;
+}
+
+.about-data h1{
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--Hijau-Segar);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.about-data p{
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--Hijau-Segar);
+    margin-bottom: 2.5rem;
+}
+
+.about-data a{
+    background-color: var(--Kuning-Emas);
+    padding: .5rem 1rem;
+    color: var(--Cokelat-Roti);
+    border-radius: 5px;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.about-data a:hover{
+    background-color: rgb(226, 119, 4);
+}
+
+/* promotion */
+.containerPromotion{
+    background: var(--Hijau-Segar);
+    position: relative;
+}
+
+.rowPromotion .promo-judul{
+    font-size: 3rem;
+    color: var(--Kuning-Emas);
+    text-align: center;
+    font-weight: 900;
+    line-height: 2.5rem;
+}
+
+.rowPromotion .promo-deskripsi{
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--Cokelat-Roti);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.promo-card{
+    display: grid;
+    row-gap: 1.5rem;
+    justify-items: center;
+}
+
+.bogo-card{
+    background: var(--MerahKuning);
+    border-radius: 1rem;
+    display: flex;
+    justify-content: space-around;
+    padding: 1.5rem;
+    width: 700px;
+    position: relative;
+}
+
+.bogo-data{
+    width: 400px;
+}
+
+.bogo-data .bogo-judul{
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--Hijau-Segar);
+    line-height: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.bogo-judul span{
+    color: var(--Putih-Bersih);
+}
+
+.bogo-data .bogo-text{
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--Putih-Bersih);
+}
+
+.img-bogo{
+    position: relative;
+    display: grid;
+    justify-items: center;
+    justify-self: center;
+}
+
+.img-bogo img{
+    position: absolute;
+    width: 200px;
+}
+
+.shapeBogo{
+    background: var(--cokelat-putih);
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    clip-path: inset(50% 0 0);
+}
+
+.bogoWhopper{
+    top: 3.5rem;
+    left: -.7rem;
+}
+
+.classicBogo{
+    bottom: -1rem;
+    right: -.7rem;
+}
+
+
+.img-bogo span{
+    position: absolute;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.buy{
+    top: 3.3rem;
+    width: 100px;
+    right: 10rem;
+    color: var(--Putih-Bersih);
+}
+
+.free{
+    top: 8.4rem;
+    right: 4rem;
+    color: rgb(134, 19, 19);
+}
+
+.btn-bogo{
+    position: absolute;
+    right: 3rem;
+}
+
+.order-btn{
+    padding: .7rem 1.4rem;
+    font: 1.2rem;
+    font-weight: 700;
+    color: var(--Putih-Bersih);
+    border-radius: 1rem;
+    background-color: var(--Cokelat-Roti);
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgb(107, 66, 38, 0.5);
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.order-btn:hover{
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 8px 25px rgb(107, 66, 38, .8);
+}
+
+.waktu{
+    background-color: var(--Cokelat-Roti);
+    padding: .3rem .7rem;
+    border-radius: 7px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, .1);
+    display: grid;
+    row-gap: .3rem;
+    width: 200px;
+    position: absolute;
+    left: 8rem;
+    top: 9rem;
+    rotate: -50deg;
+}
+
+.waktu h2{
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--Kuning-Emas);
+    text-align: center;
+}
+
+.waktu-promo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+}
+
+.timer{
+    background-color: var(--Merah);
+    padding: 2px .4rem;
+    border-radius: 5px;
+    display: grid;
+    justify-items: center;
+}
+
+.angka{
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--Putih-Bersih);
+}
+
+.timeD{
+    font-size: .6rem;
+    font-weight: 600;
+    color: var(--Putih-Bersih);
+}
+
+.tanggal{
+    text-align: center;
+    background-color: var(--Kuning-Emas);
+    padding: .1rem;
+    border-radius: 1rem;
+}
+
+.tanggal p{
+    font-size: .9rem;
+    font-weight: 600;
+    color: var(--Putih-Bersih);
+}
+
+/* discount */
+.discount-card{
+    background: linear-gradient(to left, rgb(107, 66, 38), rgb(248, 249, 250));
+    padding: 1.5rem;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    width: 700px;
+    border-radius: 1rem;
+}
+
+.discount-data{
+    position: relative;
+    z-index: 1;
+}
+
+.discount-data h3{
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--Merah);
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+}
+
+.discount-data p{
+    font-size: 1.2rem;
+    color: var(--Kuning-Emas);
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+
+.discount {
+    background: var(--Merah);
+    color: #fff;
+    border: none;
+    padding: 0.8rem 1.8rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.discount:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(255, 0, 0, 0.7);
+}
+
+.combooff {
+    width: 250px;
+    transition: transform 0.5s ease;
+    z-index: 1;
+}
+.combooff:hover {
+    transform: scale(1.1) rotate(-3deg);
+}
+
+/* menu */
+.containerMenu{
+    background: var(--cokelat-putih);
+}
+
+.rowMenu{
+    display: grid;
+    row-gap: 1rem;
+}
+
+.rowMenu h1{
+    font-size: 3rem;
+    font-weight: 900;
+    background: var(--KuningHijauSegar);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+}
+
+.menu-item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: .7rem;
+}
+
+.menu-card{
+    background-color: var(--Kuning-Emas);
+    width: 280px;
+    padding: 1rem;
+    border-radius: 3px;
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+}
+
+.img-menu{
+    overflow: hidden;
+    width: 160px;
+    height: 160px;
+    background-color: transparent;
+    border-radius: 50%;
+}
+
+.img-menu-item{
+    width: 100%;
+    height: 100%;
+}
+
+.menu-tittle{
+    font-size: 1.1rem;
+    font-size: 700;
+    color: var(--Putih-Bersih);
+    margin-bottom: .3rem;
+}
+
+.deskripsi{
+    font-size: .8rem;
+    font-weight: 600;
+    color: var(--Cokelat-Roti);
+    line-height: 1rem;
+    margin-bottom: .3rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+}
+
+.harga{
+    margin-bottom: .7rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--Putih-Bersih);
+    font-style: italic;
+}
+
+.btn-menu{
+    display: flex;
+    gap: .5rem;
+}
+
+.btn-menu button{
+    background: var(--Merah);
+    padding: .1rem 1rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--Putih-Bersih);
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: transform .3s ease;
+}
+
+.btn-menu button:hover{
+    transform: scale(1.1);
+}
+
+/* modal menu */
+.modalMenuContainer{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: rgb(107, 66, 38, 0.5);
+    height: 100vh;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.modalMenuContainer.show{
+    display: flex;
+}
+
+.rowModalMenu{
+    background-color: var(--Merah);
+    width: 450px;
+    border-radius: 1rem;
+    padding: 1.2rem;
+    position: relative;
+}
+
+.rowModalMenu .close{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: var(--Putih-Bersih);
+    font-size: 1.3rem;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.top{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: .7rem;
+}
+
+.imgModalMenu{
+    width: 200px;
+    height: 200px;
+    background-color: transparent;
+    overflow: hidden;
+}
+
+.imgModalMenu .imgModal{
+    width: 100%;
+    height: 100%;
+}
+
+.modal-tittle{
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: var(--Putih-Bersih);
+    margin-bottom: .2rem;
+}
+
+.modal-price{
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--Hijau-Segar);
+}
+
+.btnModal{
+    display: flex;
+    gap: .5rem;
+    margin-top: .5rem;
+}
+
+.btnModal button{
+    padding: .3rem 1rem;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 5px;
+    background-color: var(--Kuning-Emas);
+    color: var(--Putih-Bersih);
+    cursor: pointer;
+    transition: background-color .3s ease;
+}
+
+.btnModal button:hover{
+    background-color: rgb(226, 119, 4);
+}
+
+.modaldeskripsi{
+    margin-top: .2rem;
+}
+
+.tittleDeskripsi{
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--Kuning-Emas);
+    margin-bottom: .3rem;
+}
+
+.datadeskripsi{
+    font-size: .9rem;
+    font-weight: 500;
+    color: var(--Putih-Bersih);
+    line-height: 1rem;
+}
+
+/* contact */
+.containerContact{
+    background-color:rgb(46, 139, 87);
+}
+
+.section-tittle{
+    font-size: 4rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, rgb(255, 215, 0), rgb(250, 250, 240));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.rowContact{
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    align-items: flex-start;
+    justify-content: center;
+    gap: 2rem;
+
+}
+
+.contact-info{
+    display: grid;
+    grid-auto-columns: max-content;
+    row-gap: 4rem;
+    margin-top: 5rem;
+}
+
+.contact-info:nth-child(2){
+    order: 2;
+}
+
+.contact-tittle{
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--Kuning-Emas);
+    text-align: center;
+}
+
+.contact-address{
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--Putih-Bersih);
+    text-align: center;
+}
+
+.link-contact{
+    color: rgb(173, 255, 47);
+    font-size: 1.2rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .2rem;
+    margin-top: .3rem;
+}
+
+.sosmed i{
+    color: rgb(173, 255, 47);
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.sosmed{
+    display: flex;
+    gap: .7rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-images{
+    position: relative;
+    display: grid;
+    justify-items: center;
+    justify-self: center;
+    /* margin-top: 3rem; */
+}
+
+.contactShape{
+    width: 300px;
+    height: 300px;
+    background-color: var(--Putih-Bersih);
+    border-radius: 50%;
+}
+
+.delivery-people{
+    position: absolute;
+    width: 250px;
+    top: .5rem;
+    mask-image: linear-gradient(to bottom, 
+                var(--Putih-Bersih) 80%,
+                transparent 100%);;
+}
+
+/* footer */
+footer{
+    background: var(--merahHitamElegan);
+    padding: 1rem 3rem;
+}
+
+.data-footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.tittle-footer{
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: rgb(255, 239, 213);
+    text-align: center;
+}
+
+.card-data{
+    width: 300px;
+}
+
+.ul{
+    display: grid;
+    row-gap: .1rem;
+}
+
+.footer-deskripsi{
+    font-size: 1rem;
+    line-height: 1.2rem;
+    color: var(--Hijau-Segar);
+}
+
+.ul li{
+    list-style: none;
+    font-size: 1rem;
+    color: var(--Hijau-Segar);
+}
+
+.sosialIcon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .7rem;
+}
+
+.sosialIcon a{
+    font-size: 1rem;
+    font-weight: 700;
+    transition: .3s ease;
+}
+
+.footer-social-link{
+    color: var(--Hijau-Segar);
+    transition: .3s ease;
+}
+
+.footer-social-link:hover{
+    color: rgb(90, 155, 144);
+}
+
+.sosialIcon a:hover{
+    transform: translateY(-2px);
+}
+
+.payment img{
+    width: 70px;
+}
+
+.copyRight{
+    margin-top: 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--Kuning-Emas);
+    text-align: center;
+}
+
+/* modal checkout */
+.modalCheckout{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, .1);
+    z-index: 1000;
+}
+
+.modalCheckout.show{
+    display: flex;
+}
+
+.rowCheckout{
+    background: var(--merahHitam);
+    border-radius: 1rem;
+    padding: 1rem 1.5rem;
+    width: 320px;
+    position: relative;
+    height: 500px;
+    overflow-y: auto;
+}
+
+.rowCheckout::-webkit-scrollbar{
+    width: 10px;
+}
+
+.rowCheckout::-webkit-scrollbar-track{
+    background: transparent;
+}
+
+.rowCheckout::-webkit-scrollbar-thumb{
+    background: var(--merahHitamElegan);
+    border-radius: 1rem;
+}
+
+.closeCheckout{
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--Putih-Bersih);
+    position: absolute;
+    top: .5rem;
+    right: .5rem;
+    cursor: pointer;
+}
+
+.title-modalCheckout{
+    font-size: 1.7rem;
+    font-weight: 900;
+    color: var(--Putih-Bersih);
+    margin-bottom: .7rem;
+    text-align: center;
+}
+
+.summary-item{
+    margin-bottom: 1rem;
+}
+
+.summary-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    margin-bottom: 1rem;
+}
+
+.summary-menu{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.imgMenuSummary{
+    width: 80px;
+    height: 100px;
+    overflow: hidden;
+    background-color: transparent;
+    border-radius: 50%;
+}
+
+.img-Menusummary{
+    width: 100%;
+    height: 100%;
+}
+
+.data-MenuSummary{
+    display: flex;
+    flex-direction: column;
+    gap: .2rem;
+}
+
+.title-MenuSummary{
+    font-size: .8rem;
+    font-weight: 700;
+    color: var(--Kuning-Emas);
+}
+
+.price-MenuSummary{
+    font-size: .8rem;
+    font-weight: 600;
+    color: var(--Putih-Bersih);
+}
+
+.voucher{
+    background-color: var(--Putih-Bersih);
+    width: 100%;
+    padding: .2rem .5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: .8rem;
+    color: var(--Kuning-Emas);
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.subtotal-order{
+    display: grid;
+    row-gap: .3rem;
+}
+
+.subtotal-menu{
+    display: grid;
+    row-gap: .2rem;
+}
+
+.subtotal-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: .8rem;
+    font-weight: 700;
+    color: var(--Putih-Bersih);
+}
+
+.title-sub{
+    display: flex;
+    align-items: center;
+    gap: .2rem;
+}
+
+.sub{
+    display: grid;
+    row-gap: .1rem;
+}
+
+.sub-data{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: .8rem;
+    font-weight: 500;
+    color: var(--Kuning-Emas);
+}
+
+.amountMenuSummary{
+    font-size: .8rem;
+    font-size: 550;
+    color: var(--Putih-Bersih);
+}
+
+.title-form{
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--Putih-Bersih);
+    text-align: center;
+}
+
+.form-checkout{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.input{
+    background:transparent;
+    border: 1.2px solid var(--Putih-Bersih);
+    font-size: .9rem;
+    font-weight: 550;
+    color: var(--Putih-Bersih);
+    padding: .3rem .8rem;
+    border-radius: .2rem;
+}
+
+.input::placeholder{
+    color: rgba(248, 249, 250,.5);
+}
+
+.select{
+    color: rgba(248, 249, 250,.5);
+    cursor: default;
+    user-select: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.option{
+    padding: .5rem 1rem;
+    display: none;
+    flex-direction: column;
+    transform: translateY(-50%);
+    transition: transform .4s ease;
+    gap: .5rem;
+}
+
+.option.active{
+    display: flex;
+    transform: translateY(0);
+}
+
+.transferPayment-container{
+    display: flex;
+    flex-direction: column;
+    gap:.5rem;
+}
+
+.option-item{
+    background: var(--Kuning-Emas);
+    border-radius: .5rem;
+    padding: .3rem 1rem;
+    cursor: pointer;
+    transition: background .3s ease, transform .3s ease;
+    font-size: .9rem;
+    color: var(--Putih-Bersih);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-weight: 550;
+    position: relative;
+}
+
+.option-item:hover{
+    background: rgb(233, 146, 54);
+    transform: translateY(-1px);
+}
+
+.option img{
+    width: 40px;
+}
+
+.iconDropdown{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 1rem;
+}
+
+.transferPayment-dropdown{
+    padding-inline: 1rem;
+    display: none;
+    row-gap: .5rem;
+    transform: translateY(-100%);
+    z-index: -1;
+    transition: transform .5s ease;
+}
+
+.transferPayment-dropdown.active{
+    transform: translateY(0);
+    display: grid;
+    z-index: 0;
+}
+
+.transferPayment-item{
+    border: 1px solid var(--Putih-Bersih);
+    border-radius: .5rem;
+    padding: .3rem 1rem;
+    cursor: pointer;
+    transition: background .3s ease, transform .3s ease;
+    font-size: .9rem;
+    display: flex;
+    align-items: center;
+    gap:1rem;
+    font-size: .9rem;
+    color: var(--Putih-Bersih);
+    font-weight: 550;
+}
+
+.transferPayment-item:hover{
+    background: rgba(248, 249, 250, .5);
+    transform: translateY(-1px);
+}
+
+.chechkout{
+    margin-top: 1rem;
+    background-color: var(--Putih-Bersih);
+    border-radius: .5rem;
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: .5rem;
+}
+
+.total-chechkout{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--Kuning-Emas);
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.btn-confirm{
+    margin-top:.5rem ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-confirm button{
+    background: var(--Kuning-Emas);
+    color: var(--Putih-Bersih);
+    font-size: 1rem;
+    font-weight: 700;
+    padding: .4rem 1rem;
+    cursor: pointer;
+    transition: .3s ease;
+    border-radius: .5rem;
+}
+
+.btn-confirm button:hover{
+    background-color: rgba(226, 119, 4, .5);
+    box-shadow: 0 3px 6px rgba(248, 249, 250, .8);
+}
+
+.provision{
+    font-size: .6rem;
+    display: flex;
+    align-items: flex-start;
+    gap: .5rem;
+}
+
+/* media queries */
+@media screen and (min-width: 1150px) {
+    /* home responsive */
+    .rowHome h1{
+        font-size: 4rem;
+    }
+
+    .shape{
+        width: 400px;
+        height: 400px;
+    }
+
+    .burger{
+        width:550px;
+    }
+
+    .cucumber{
+        width: 120px;
+    }
+
+    .vegetable{
+        width: 130px;
+    }
+
+    .tomatos{
+        width: 120px;
+    }
+
+    .meat{
+        width: 120px;
+    }
+
+    .saus{
+        width: 700px;
+    }
+
+    .sticker{
+        width: 250px;
+        right: 4rem;
+        top: 15rem;
+    }
+
+    .text{
+        position: absolute;
+        top: 12rem;
+        left: 2rem;
+        width: 230px;
+        text-align: left;
+    }
+
+    .text p{
+        margin-bottom: 2rem;
+    }
+    /* contact reponsive */
+    .section-tittle{
+    font-size: 6rem;
+    font-weight: 900;
+    margin-bottom: 1.5rem;
+    }
+
+    .rowContact{
+        gap: 3rem;
+    }
+
+    .contact-info{
+        row-gap: 6rem;
+        margin-top: 7rem;
+    }
+
+    .contactShape{
+        width: 500px;
+        height: 500px;
+    }
+
+    .delivery-people{
+        width: 450px;
+    }
+
+    /* .contact-tittle{
+        text-align: center;
+    } */
+
+}
+
+@media screen and (max-width: 1024px){
+    .waktu{
+        width: 120px;
+        rotate: .1deg;
+        top: 6rem;
+    }
+
+    .waktu h2{
+        font-size: 1rem;
+    }
+
+    .waktu-promo{
+        gap: .3rem;
+    }
+
+    .timeer{
+        padding: 1px .2rem;
+    }
+
+    .angka{
+        font-size: .8rem;
+    }
+
+    .timeD{
+        font-size: .4rem;
+    }
+    .tanggal p{
+        font-size: .5rem;
+    }
+
+}
+
+@media screen and (max-width: 820px){
+    .navbar{
+            padding:.5rem 4rem;
+    }
+
+    .navbar-nav{
+        position: relative;
+    } 
+    
+    .link-nav{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        background-color: var(--Kuning-Emas);
+        width: 200px;
+        right: 0;
+        top: 2.45rem;
+        padding: 1rem;
+        /* border-radius: 1rem;
+        transform: translateY(-100%); */
+        opacity: 0;
+        transition: all .3s ease;
+    }
+
+    .link-nav.active{
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    .btn-nav .btn-clear{
+        display: flex;
+    }
+
+    .qtyOrder{
+        right: 1.6rem;
+    }
+
+    .rowAbout{
+        grid-template-columns: 1fr;
+    }
+
+    .imgAbout{
+        order: 2;
+    }
+
+    .waktu{
+        top: 27rem;
+        left: 15rem;
+    }
+
+    .waktu h2{
+        font-size: .6rem;
+    }
+
+    .angka{
+        font-size: .6rem;
+    }
+
+    .timeD{
+        font-size: .4rem;
+    }
+
+    .tanggal p{
+        font-size: .4rem;
+    }
+
+    .bogo-card,
+    .discount-card{
+        width: 500px;
+    }
+
+    .bogo-data{
+        width: 180px;
+    }
+
+    .bogo-data .bogo-judul{
+        font-size: 1.7rem;
+        line-height: 2rem;
+    }
+
+    .bogo-data .bogo-text{
+        font-size: .9rem;
+    }
+
+    .img-bogo img{
+        width: 100px;
+    }
+
+    .shapeBogo{
+        width: 180px;
+        height: 180px;
+    }
+
+    .bogoWhopper{
+        top: 4rem;
+        left: -.5rem;
+    }
+
+    .classicBogo{
+        bottom: .5rem;
+        right: .5rem;
+    }
+
+    .img-bogo span{
+        font-size: 1.3rem;
+    }
+
+    .buy{
+        right: 4.5rem;
+        top: 3.5rem;
+    }
+
+    .free{
+        top: 5.9rem;
+        right: 2.5rem;
+    }
+
+    .discount-data h3{
+        font-size: 2rem;
+    }
+
+    .discount-data p{
+        font-size: 1rem;
+    }
+
+    .discount{
+        padding: .6rem 1.5rem;
+    }
+
+    .combooff{
+        width: 180px;
+    }
+
+    .contact-info{
+        margin-top: 3rem;
+    }
+
+    .contact-tittle{
+        font-size: 1rem;
+    }
+
+    .contact-address{
+        font-size: .7rem;
+    }
+
+    .contactShape{
+        width: 200px;
+        height: 200px;
+    }
+
+    .delivery-people{
+        width: 170px;
+    }
+
+    .link-contact span{
+        font-size: .7rem;
+    }
+
+    .tittle-footer{
+        font-size: .9rem;
+    }
+
+    .ul li{
+        font-size: .6rem;
+    }
+
+    .MethodPay img{
+        width: 30px;
+    }
+
+    .copyRight{
+        font-size: .7rem;
+    }
+
+}
+
+@media screen and (max-width: 620px) {
+    .navbar-nav h1{
+        font-size: 1.3rem;
+    }
+
+    .waktu{
+        padding: .15rem .3rem;
+        top: 25rem;
+    }
+
+    .waktu h2{
+        font-size: .6rem;
+    }
+
+    .waktu-promo{
+        gap: .1rem;
+    }
+
+    .timer{
+        padding: 2px .2rem;
+    }
+
+    .angka{
+        font-size: .4rem;
+        font-weight: 400;
+    }
+
+    .timeD{
+        font-size: .3rem;
+        
+    }
+
+    .tanggal p{
+        font-size: .3rem;
+    }
+
+    .bogo-card,
+    .discount-card{
+        width: 350px;
+    }
+        .bogo-data{
+        width: 150px;
+    }
+
+    .bogo-data .bogo-judul{
+        font-size: 1.4rem;
+        line-height: 1.7rem;
+    }
+
+    .bogo-data .bogo-text{
+        font-size: .6rem;
+    }
+
+    .img-bogo img{
+        width: 80px;
+    }
+
+    .shapeBogo{
+        width: 140px;
+        height: 140px;
+    }
+
+    .bogoWhopper{
+        top: 3.3rem;
+        left: -.5rem;
+    }
+
+    .classicBogo{
+        bottom: -.8rem;
+        right: .5rem;
+    }
+
+    .img-bogo span{
+        font-size: 1rem;
+    }
+
+    .buy{
+        right: 2.5rem;
+        top: 2.9rem;
+    }
+
+    .free{
+        top: 4.8rem;
+        right: 2.5rem;
+    }
+
+    .order-btn{
+        padding: .4rem 1rem;
+        font-size: .8rem;
+    }
+
+    .discount-data h3{
+        font-size: 1.5rem;
+    }
+
+    .discount-data p{
+        font-size: .7rem;
+    }
+
+    .discount{
+        padding: .4rem 1.3rem;
+        font-size: .8rem;
+    }
+
+    .combooff{
+        width: 140px;
+    }
+
+    .rowContact{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        row-gap: 0;
+    }
+
+    .contact-info{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 6rem;
+        margin-top: 1rem;
+    }
+
+    .contact-tittle{
+        font-size: .9rem;
+    }
+
+    .contact-address{
+        font-size: .6rem;
+    }
+
+    .link-contact{
+        font-size: .6rem;
+    }
+
+    .sosmed i{
+        font-size: .7rem;
+    }
+
+    .contact-images{
+        order: 3;
+    }
+
+    .tittle-footer{
+        font-size: .6rem;
+    }
+
+    .ul li{
+        font-size: .5rem;
+    }
+
+    .sosialIcon a{
+        font-size: .7rem;
+    }
+
+    .MethodPay{
+        display: flex;
+        flex-wrap: wrap;
+        gap: .2rem;
+    }
+
+
+}
+
+@media screen and (max-width: 470px){
+    .navbar-nav h1{
+        font-size: 1.2rem;
+    }
+
+    .rowHome h1{
+        font-size: 2rem;
+    }
+
+    .shape{
+        width: 150px;
+        height: 150px;
+    }
+
+    .burger{
+        width: 250px;
+        top: -4rem;
+    }
+
+    .saus{
+        width: 300px;
+    }
+
+    .cucumber,.vegetable,
+    .tomatos,.meat{
+        width: 60px;
+    }
+
+    .cucumber{
+        left: -5rem;
+    }
+
+    .vegetable{
+        right: -5rem;
+    }
+
+    .tomatos{
+        bottom: -1.5rem;
+        left: -3rem;
+    }
+
+    .meat{
+        bottom: -2rem;
+        right: -3rem;
+    }
+
+    .text p{
+        font-size: .8rem;
+    }
+
+    .sticker{
+        width: 80px;
+    }
+
+    .rowPopular h1{
+        font-size: 2rem;
+        line-height: 2rem;
+    }
+
+    .about-data h1{
+        font-size: 2rem;
+    }
+
+    .about-data p{
+        font-size: .8rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .aboutimg-tittle{
+        width: 280px
+    }
+
+    .about-data a{
+        font-size: .9rem;
+        padding: .3rem .7rem;
+    }
+
+    .rowPromotion .promo-judul{
+        font-size: 2rem;
+        line-height: 2rem;
+    }
+
+    .rowPromotion .promo-deskripsi{
+        font-size: .8rem;
+    }
+
+    .waktu{
+        top: 21rem;
+        left: 14rem;
+        width: 80px;
+    }
+
+    .waktu h2{
+        font-size: .3rem;
+    }
+
+    .angka{
+        font-size: .3rem;
+    }
+
+    .timeD{
+        font-size: .2rem;
+    }
+
+    .tanggal p{
+        font-size: .2rem;
+    }
+
+    .bogo-card,
+    .discount-card{
+        width: 200px;
+    }
+        .bogo-data{
+        width: 150px;
+    }
+
+    .bogo-data .bogo-judul{
+        font-size: .8rem;
+        line-height: 1rem;
+        margin-bottom: .5rem;
+    }
+
+    .bogo-data .bogo-text{
+        font-size: .4rem;
+    }
+
+    .img-bogo img{
+        width: 40px;
+    }
+
+    .shapeBogo{
+        width: 65px;
+        height: 65px;
+    }
+
+    .bogoWhopper{
+        top: 1.5rem;
+        left: -.2rem;
+    }
+
+    .classicBogo{
+        bottom: .5rem;
+        right: .1rem;
+    }
+
+    .img-bogo span{
+        font-size: .7rem;
+    }
+
+    .buy{
+        right: -2rem;
+        top: 1.1rem;
+    }
+
+    .free{
+        top: 2.1rem;
+        right: .7rem;
+    }
+
+    .btn-bogo{
+        right: 1rem;
+        top: .5rem;
+    }
+
+    .order-btn{
+        padding: .2rem .6rem;
+        font-size: .5rem;
+    }
+
+    .discount-data h3{
+        font-size: .8rem;
+    }
+
+    .discount-data p{
+        font-size: .5rem;
+        margin-bottom: .7rem;
+    }
+
+    .discount{
+        padding: .2rem .4rem;
+        font-size: .5rem;
+    }
+
+    .combooff{
+        width: 80px;
+    }
+
+    .rowMenu h1{
+        font-size: 2rem;
+    }
+
+    .section-tittle{
+        font-size: 2rem;
+    }
+
+    .contact-tittle{
+        font-size: .6rem;
+    }
+
+    .contact-address{
+        font-size: .4rem;
+    }
+
+    .link-contact{
+        font-size: .4rem;
+    }
+
+    .link-contact span{
+        font-size: .4rem;
+    }
+
+    .contactShape{
+        width: 150px;
+        height: 150px;
+    }
+
+    .delivery-people{
+        width: 120px;
+    }
+
+    .data-footer{
+        gap: .5rem;
+    }
+
+
+}
+
+@media screen and (max-width: 390px) {
+    .navbar{
+        padding: .5rem 3rem;
+    }
+
+    .shoppingCart{
+        width: 300px;
+        height: calc(100vh - 45px);
+        top: 45px;
+    }
+
+    .data-shoppingCart h4{
+        font-size: .6rem;
+        line-height: .7rem;
+    }
+
+    .data-shoppingCart span{
+        font-size: .6rem;
+    }
+
+    .numberOfProducts{
+        width: 60px;
+    }
+
+    .numberOfProducts button{
+        font-size: .5rem;
+        padding-inline: .2rem;
+    }
+
+    .numberOfProducts span{
+        font-size: .5rem;
+    }
+
+    .imgShoppingCart{
+        width: 70px;
+        height: 70px;
+    }
+
+    .cekout-card{
+        padding: .5rem .9rem;
+    }
+
+    .ceklistAll span{
+        font-size: .6rem;
+    }
+
+    .totalAll{
+        font-size: .7rem;
+    }
+
+    #orderItem{
+        font-size: .6rem;
+    }
+
+    .rowHome h1{
+        font-size: 1.5rem;
+    }
+
+    .shape{
+        width: 120px;
+        height: 120px;
+    }
+
+    .burger{
+        width: 200px;
+        top: -3.2rem;
+    }
+
+    .saus{
+        width: 250px;
+    }
+
+    .cucumber, .vegetable,
+    .tomatos, .meat{
+        width: 45px;
+    }
+
+    .cucumber{
+        left: -4rem;
+        top:-.5rem;
+    }
+
+    .vegetable{
+        top: -1rem;
+        right: -3.5rem;
+    }
+
+    .tomatos{
+        bottom: -1rem;
+        left: -1.4rem;
+    }
+
+    .meat{
+        bottom: -1.5rem;
+        right: -1.3rem;
+    }
+
+    .text p{
+        font-size: .5rem;
+    }
+
+    .sticker{
+        width: 60px;
+        right: -.1rem;
+    }
+
+    .text .button{
+        font-size: .7rem;
+    }
+
+    .rowPopular h1{
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+    }
+
+    .popular-shape{
+        width: 130px;
+        height: 130px;
+    }
+
+    .burger-menu{
+        width: 115px;
+    }
+
+    .vegetables-1,
+    .vegetables-2{
+        width: 80px;
+    }
+
+    .vegetables-1{
+        left: -2rem;
+    }
+
+    .vegetables-2{
+        right: -2rem;
+        top: 5rem;
+    }
+
+    .about-data h1{
+        font-size: 1.5rem;
+    }
+
+    .about-data p{
+        font-size: .6rem;
+    }
+
+    .about-data a{
+        font-size: .7rem;
+    }
+
+    .aboutimg-tittle{
+        width: 250px;
+    }
+
+    .rowPromotion .promo-judul{
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+    }
+
+    .rowPromotion .promo-deskripsi{
+        font-size: .7rem;
+        margin-bottom: 1rem;
+    }
+
+    .waktu{
+        top: 19rem;
+        left: 10rem;
+    }
+
+    .classicBogo{
+        bottom: -.5rem;
+    }
+
+    .discount-data p{
+        margin-bottom: .3rem;
+    }
+
+    .combooff{
+        width: 80px;
+    }
+
+    .rowMenu h1{
+        font-size: 1.5rem;
+    }
+
+    .menu-card{
+        width: 230px;
+    }
+
+    .img-menu{
+        width: 100px;
+        height: 100px;
+    }
+
+    .menu-tittle{
+        font-size: .8rem;
+    }
+
+    .deskripsi{
+        font-size: .6rem;
+    }
+
+    .harga{
+        font-size: .7rem;
+    }
+
+    .btn-menu button{
+        font-size: .7rem;
+        padding: .1rem .7rem;
+    }
+
+    .section-tittle{
+        font-size: 1.5rem;
+        margin-bottom: 0;
+    }
+
+    .contact-info{
+        column-gap: 3rem;
+    }
+
+    .sosmed i{
+        font-size: .6rem;
+    }
+
+    .contactShape{
+        width: 80px;
+        height: 80px;
+    }
+
+    .delivery-people{
+        width: 65px;
+    }
+
+    .data-footer{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .ul li{
+        text-align: center;
+    }
+
+    .copyRight{
+        font-size: .5rem;
+    }
+}
+
