@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burger Minion</title>
+    <!-- css -->
+    <link rel="stylesheet" href="asset/css/style.css">
+    <!-- remix icon -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <!-- font awesome icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- SWIPPER CSS -->
+     <link rel="stylesheet" href="asset/css/swiper-bundle.min.css">
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- navbar -->
+    <div class="navbarContainer">
+        <div class="navbar">
+            <nav class="navbar-nav">
+                <h1>🍔 <span class="efek">BurgerMinion</span></h1>
+                <div class="link-nav">
+                    <a href="#home">Home</a>
+                    <a href="#popular">Popular</a>
+                    <a href="#about">About Us</a>
+                    <a href="#promo">Promotion</a>
+                    <a href="#menu">Menu</a>
+                    <a href="#contact">Contact Us</a>
+                </div>
+                <div class="btn-nav">
+                    <button class="button-nav" id="shoppingCart"><i class="ri-shopping-cart-2-line"></i></button>
+                    <span class="qtyOrder" id="qtyOrder">0</span>
+                    <button class="button-nav btn-clear" id="humburgerMenu"><i class="ri-menu-line"></i></button>
+                </div>
+            </nav>
+            <!-- kerajang belanja start-->
+            <div class="shoppingCart" id="basket">
+                <div class="rowShoppingCart" id="shoppingCart-basket">
+                </div>
+                <div class="chekOut">
+                    <div class="cekout-card">
+                        <div class="ceklistAll">
+                            <input type="checkbox" class="checkboxAll">
+                            <span>Semua</span>
+                        </div>
+                        <div class="total">
+                            <p class="totalAll">Rp.<span class="totalHarga">0</span></p>
+                            <button id="orderItem">Order</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- kerajang belanja end-->
+        </div>
+    </div>
+    <!-- navbar end -->
+
+    <!-- Home start -->
+    <main class="containerHome section" id="home">
+        <section class="rowHome">
+            <h1 class="home-tittle">BURGER MINION</h1>
+            <div class="img">
+                <div class="shape"></div>
+                <img src="asset/img/saus.webp" alt="img" class="saus move">
+                <img src="asset/img/burger.png" alt="img" class="burger move">
+                <img src="asset/img/timun.png" alt="img" class="cucumber move">
+                <img src="asset/img/sayur.png" alt="img" class="vegetable move">
+                <img src="asset/img/tomat1setengah.png" alt="img" class="tomatos move">
+                <img src="asset/img/daging.png" alt="img" class="meat move">
+            </div>
+            <img src="asset/img/logo.png" alt="logo" class="sticker">
+            <div class="text">
+                <p class="text-home">Experience the delicious sensation of juicy burgers, fresh vegetables, and our signature special sauce.</p>
+
+                <a href="#" class="button href-home">Learn More</a>
+            </div>
+        </section>
+    </main>
+    <!-- Home end -->
+    <!-- popular start-->
+    <section class="containerPopular section" id="popular">
+        <div class="rowPopular">
+            <h1>BEST <br> SELLER</h1>
+            <div class="popular-swiper swiper">
+                <div class="swiper-wrapper">
+                    <article class=" popular-card swiper-slide">
+                        <div class="popular-img">
+                            <div class="popular-shape"></div>
+                            <img src="asset/img/sayur.png" alt="sayur" class="vegetables-2">
+                            <img src="asset/img/BBQ Smoked Beef Cheese.png" alt="burger" class="burger-menu">
+                            <img src="asset/img/sayur.png" alt="sayur" class="vegetables-1">
+                        </div>
+                        <div class="popular-data">
+                            <h2>BBQ Smoked Beef Chees</h2>
+                            <p>Smoked beef, melted cheese, and savory BBQ in every bite.</p>
+                            <a href="#menu">Order Now</a>
+                        </div>
+                    </article>
+                    <article class="popular-card swiper-slide">
+                        <div class="popular-img">
+                            <div class="popular-shape"></div>
+                            <img src="asset/img/sayur.png" alt="sayur" class="vegetables-2">
+                            <img src="asset/img/classic chicken.png" alt="burger" class="burger-menu">
+                            <img src="asset/img/sayur.png" alt="sayur" class="vegetables-1">
+                        </div>
+                        <div class="popular-data">
+                            <h2>Classic Crispy Chicken</h2>
+                            <p>Golden crispy chicken with fresh vegetables and creamy sauce.</p>
+                            <a href="#menu">Order Now</a>
+                        </div>
+                    </article>
+                    <article class="popular-card swiper-slide">
+                        <div class="popular-img">
+                            <div class="popular-shape"></div>
+                            <img src="asset/img/sayur.png" alt="sayur" class="vegetables-2">
+                            <img src="asset/img/whopper burger.png" alt="burger" class="burger-menu">
+                            <img src="asset/img/sayur.png" alt="sayur" class="vegetables-1">
+                        </div>
+                        <div class="popular-data">
+                            <h2>Whopper Burger</h2>
+                            <p>Juicy beef, fresh veggies, and signature sauce in every bite.</p>
+                            <a href="#menu">Order Now</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- popular end-->
+    <!-- about start -->
+    <section class="containerAbout section" id="about">
+        <div class="rowAbout">
+            <div class="imgAbout">
+                <img src="asset/img/aboutApiBurger.png" alt="img" class="aboutimg-tittle">
+            </div>
+            <div class="about-data">
+                <h1>ABOUT US</h1>
+                <p>Welcome to Burger Minion, the home of true burger lovers. We craft juicy beef, crispy chicken, fresh vegetables, and our signature sauces to bring you an unforgettable taste. For us, a burger is more than just food — it’s an experience of warmth and happiness. With fresh ingredients and the best quality, we serve every burger with care and passion. At Burger Minion, we believe every bite should bring joy. That’s why we combine freshness, flavor, and creativity in every recipe we make. Whether you crave a classic cheeseburger, a crispy chicken delight, or a smoky BBQ sensation, we’ve got something to satisfy your appetite. Our mission is simple: to create burgers that not only fill your stomach but also brighten your day. From our kitchen to your table, every burger is made with love and served with a smile.</p>
+
+                <a href="#popular">The Best Burger</a>
+            </div>
+        </div>
+    </section>
+    <!-- about end -->
+    <!-- promotion start -->
+    <section class="containerPromotion section" id="promo">
+        <div class="rowPromotion">
+            <h1 class="promo-judul">PROMO SPESIAL<br>BURGER MINION</h1>
+            <p class="promo-deskripsi">Grab the best offers to make your day even more decious!</p>
+            
+            <div class="promo-card">
+                <article class="bogo-card">
+                    <div class="bogo-data">
+                        <h1 class="bogo-judul"><span>Buy 1 Get 1</span> <br>Free</h1>
+                        <p class="bogo-text">Buy 1 Whopper Burger and get 1 Classic Crispy Chicken Burger for FREE!</p>
+                    </div>
+                    <div class="img-bogo">
+                        <div class="shapeBogo"></div>
+                        <span class="buy">BUY 1</span>
+                        <img src="asset/img/whopper burger.png" alt="img" class="bogoWhopper">
+                        <span class="free">FREE</span>
+                        <img src="asset/img/classic chicken.png" alt="img" class="classicBogo">
+                    </div>
+                    <div class="btn-bogo">
+                        <button id="order" class="order-btn">Order Now</button>
+                    </div>
+                </article>
+                <article class="discount-card">
+                    <div class="discount-data">
+                        <h3> 💸30% Off</h3>
+                        <p>Enjoy up to 30% off all online orders this week.</p>
+                        <button id="discount" class="discount">Get Discount</button>
+                    </div>
+                    <div class="img-off">
+                        
+                        <img src="asset/img/img discount.png" alt="" class=" combooff">
+                    </div>
+                </article>
+            </div>
+        </div>
+        <div class="waktu">
+            <h2>PROMO TERSISA</h2>
+            <div class="waktu-promo">
+                <div class="timer">
+                    <span class="angka">01</span>
+                    <p class="timeD">Hari</p>
+                </div>
+                <div class="timer">
+                    <span class="angka">01</span>
+                    <p class="timeD">Jam</p>
+                </div>
+                <div class="timer">
+                    <span class="angka">01</span>
+                    <p class="timeD">Menit</p>
+                </div>
+            </div>
+            <div class="tanggal">
+                <p>HINGGA 10 AGUSTUS</p>
+            </div>
+        </div>
+    </section>
+    <!-- promotion end -->
+    <!-- Menu start -->
+    <section class="containerMenu section" id="menu">
+        <div class="rowMenu">
+            <h1>MENU LIST</h1>
+            <div class="menu-item">
+                <div class="menu-card menutoCart">
+                    <div class="img-menu">
+                        <img src="asset/img/classic chicken.png" alt="img" class="img-menu-item imgtoCart">
+                    </div>
+                    <h2 class="menu-tittle tittletoCart">Classic Crispy Chicken</h2>
+                    <p class="deskripsi deskripsitoModal">Smoked beef, melted cheese, and savory BBQ in every bite.</p>
+                    <span class="harga hargatocart">Rp.20000</span>
+                    <div class="btn-menu">
+                        <button class="btnShopping"><i class="ri-shopping-cart-2-line"></i></button>
+                        <button class="btnEye"><i class="ri-eye-line"></i></button>
+                        <button class="btnBuy"><i class="ri-shopping-bag-line"></i></button>
+                    </div>
+                </div>
+                <div class="menu-card menutoCart">
+                    <div class="img-menu">
+                        <img src="asset/img/BBQ Smoked Beef Cheese.png" alt="img" class="img-menu-item imgtoCart">
+                    </div>
+                    <h2 class="menu-tittle tittletoCart">BBQ Smoked Beef Chees</h2>
+                    <p class="deskripsi deskripsitoModal">Juicy beef, fresh veggies, and signature sauce in every bite.</p>
+                    <span class="harga hargatocart">Rp.20000</span>
+                    <div class="btn-menu">
+                        <button class="btnShopping"><i class="ri-shopping-cart-2-line"></i></button>
+                        <button class="btnEye"><i class="ri-eye-line"></i></button>
+                        <button class="btnBuy"><i class="ri-shopping-bag-line"></i></button>
+                    </div>
+                </div>
+                <div class="menu-card menutoCart">
+                    <div class="img-menu">
+                        <img src="asset/img/whopper burger.png" alt="img" class="img-menu-item imgtoCart">
+                    </div>
+                    <h2 class="menu-tittle tittletoCart">Whopper Burger</h2>
+                    <p class="deskripsi deskripsitoModal">Juicy beef, fresh veggies, melted cheese, and our signature sauce in every bite for a taste you’ll never forget.</p>
+                    <span class="harga hargatocart">Rp.20000</span>
+                    <div class="btn-menu">
+                        <button class="btnShopping"><i class="ri-shopping-cart-2-line"></i></button>
+                        <button class="btnEye"><i class="ri-eye-line"></i></button>
+                        <button class="btnBuy"><i class="ri-shopping-bag-line"></i></button>
+                    </div>
+                </div>
+                <div class="menu-card menutoCart">
+                    <div class="img-menu">
+                        <img src="asset/img/hot dog biasa.png" alt="img" class="img-menu-item imgtoCart">
+                    </div>
+                    <h2 class="menu-tittle tittletoCart">Classic Fresh Hot Dog</h2>
+                    <p class="deskripsi deskripsitoModal">Juicy sausage served in a soft bun with fresh lettuce, tomatoes, onions, and a drizzle of ketchup & mustard.</p>
+                    <span class="harga hargatocart">Rp.20000</span>
+                    <div class="btn-menu">
+                        <button class="btnShopping"><i class="ri-shopping-cart-2-line"></i></button>
+                        <button class="btnEye"><i class="ri-eye-line"></i></button>
+                        <button class="btnBuy"><i class="ri-shopping-bag-line"></i></button>
+                    </div>
+                </div>
+                <div class="menu-card menutoCart">
+                    <div class="img-menu">
+                        <img src="asset/img/hot dog full toping.png" alt="img" class="img-menu-item imgtoCart">
+                    </div>
+                    <h2 class="menu-tittle tittletoCart">Loaded Supreme Hot Dog</h2>
+                    <p class="deskripsi deskripsitoModal">A hearty hot dog loaded with pickles, crispy bacon, onions, peppers, and rich sauces for the ultimate bite.</p>
+                    <span class="harga hargatocart">Rp.20000</span>
+                    <div class="btn-menu">
+                        <button class="btnShopping"><i class="ri-shopping-cart-2-line"></i></button>
+                        <button class="btnEye"><i class="ri-eye-line"></i></button>
+                        <button class="btnBuy"><i class="ri-shopping-bag-line"></i></button>
+                    </div>
+                </div>
+                <div class="menu-card menutoCart">
+                    <div class="img-menu">
+                        <img src="asset/img/Burger Minion Family Pack.png" alt="img" class="img-menu-item imgtoCart">
+                    </div>
+                    <h2 class="menu-tittle tittletoCart">Burger Minion Family Pack</h2>
+                    <p class="deskripsi deskripsitoModal">Perfect for sharing, our Burger Minion Family Pack comes with a variety of juicy burgers, crispy fries, and refreshing drinks — a complete feast for the whole family.</p>
+                    <span class="harga hargatocart">Rp.20000</span>
+                    <div class="btn-menu">
+                        <button class="btnShopping"><i class="ri-shopping-cart-2-line"></i></button>
+                        <button class="btnEye"><i class="ri-eye-line"></i></button>
+                        <button class="btnBuy"><i class="ri-shopping-bag-line"></i></button>
+                    </div>
+                </div>
+                <div class="menu-card menutoCart">
+                    <div class="img-menu">
+                        <img src="asset/img/Classic Minion Combo.png" alt="img" class="img-menu-item imgtoCart">
+                    </div>
+                    <h2 class="menu-tittle tittletoCart">Classic Minion Combo</h2>
+                    <p class="deskripsi deskripsitoModal">Enjoy a classic combo of a juicy burger, crispy golden fries, and an ice-cold drink — the perfect trio for any craving.</p>
+                    <span class="harga hargatocart">Rp.20000</span>
+                    <div class="btn-menu">
+                        <button class="btnShopping"><i class="ri-shopping-cart-2-line"></i></button>
+                        <button class="btnEye"><i class="ri-eye-line"></i></button>
+                        <button class="btnBuy"><i class="ri-shopping-bag-line"></i></button>
+                    </div>
+                </div>
+                <div class="menu-card menutoCart">
+                    <div class="img-menu">
+                        <img src="asset/img/Double Trouble Burger.png" alt="img" class="img-menu-item imgtoCart">
+                    </div>
+                    <h2 class="menu-tittle tittletoCart">Double Trouble Burger</h2>
+                    <p class="deskripsi deskripsitoModal">Double beef patties, double cheese, and double the flavor — made for true burger lovers.</p>
+                    <span class="harga hargatocart">Rp.20000</span>
+                    <div class="btn-menu">
+                        <button class="btnShopping"><i class="ri-shopping-cart-2-line"></i></button>
+                        <button class="btnEye"><i class="ri-eye-line"></i></button>
+                        <button class="btnBuy"><i class="ri-shopping-bag-line"></i></button>
+                    </div>
+                </div>
+                <div class="menu-card menutoCart">
+                    <div class="img-menu">
+                        <img src="asset/img/Spicy Inferno Burger.png" alt="img" class="img-menu-item imgtoCart">
+                    </div>
+                    <h2 class="menu-tittle tittletoCart">Spicy Inferno Burger</h2>
+                    <p class="deskripsi deskripsitoModal">Turn up the heat with our fiery beef burger topped with jalapeños, spicy sauce, and melty cheese.</p>
+                    <span class="harga hargatocart">Rp.20000</span>
+                    <div class="btn-menu">
+                        <button class="btnShopping"><i class="ri-shopping-cart-2-line"></i></button>
+                        <button class="btnEye"><i class="ri-eye-line"></i></button>
+                        <button class="btnBuy"><i class="ri-shopping-bag-line"></i></button>
+                    </div>
+                </div>
+                <div class="menu-card menutoCart">
+                    <div class="img-menu">
+                        <img src="asset/img/Cheese Lover Burger.png" alt="img" class="img-menu-item imgtoCart">
+                    </div>
+                    <h2 class="menu-tittle tittletoCart">Cheese Lover Burger</h2>
+                    <p class="deskripsi deskripsitoModal">A juicy beef patty topped with double melted cheese and our signature sauce for the ultimate cheesy bite</p>
+                    <span class="harga hargatocart">Rp.20000</span>
+                    <div class="btn-menu">
+                        <button class="btnShopping"><i class="ri-shopping-cart-2-line"></i></button>
+                        <button class="btnEye"><i class="ri-eye-line"></i></button>
+                        <button class="btnBuy"><i class="ri-shopping-bag-line"></i></button>
+                    </div>
+                </div>
+                <div class="menu-card menutoCart">
+                    <div class="img-menu">
+                        <img src="asset/img/Mushroom Swiss Burger.png" alt="img" class="img-menu-item imgtoCart">
+                    </div>
+                    <h2 class="menu-tittle tittletoCart">Mushroom Swiss Burger</h2>
+                    <p class="deskripsi deskripsitoModal">Juicy beef topped with sautéed mushrooms, melted Swiss cheese, and creamy garlic sauce.</p>
+                    <span class="harga hargatocart">Rp.20000</span>
+                    <div class="btn-menu">
+                        <button class="btncart"><i class="ri-shopping-cart-2-line"></i></button>
+                        <button class="btnEye"><i class="ri-eye-line"></i></button>
+                        <button class="btnBuy"><i class="ri-shopping-bag-line"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Menu end -->
+    <!-- contact start-->
+    <section class="containerContact section" id="contact">
+        <h1 class="section-tittle">CONTACT US</h1>
+        <div class="rowContact">
+            <div class="contact-info">
+                <div>
+                    <h4 class="contact-tittle">Write US</h4>
+                    <div class="sosmed">
+                        <a href="#" target="_blank" class="contact-social-link"><i class="ri-whatsapp-fill"></i></a>
+                        <a href="#" target="_blank" class="contact-social-link"><i class="ri-instagram-fill"></i></a>
+                        <a href="#" target="_blank" class="contact-social-link"><i class="ri-tiktok-fill"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="contact-tittle">Our Location</h4>
+
+                    <address class="contact-address">
+                        Jl. Tukad - Baru, Pemogan <br>
+                        Gg. Pondok - Rukun #G.07
+                    </address>
+
+                    <a href="https://share.google/2KzGT4p2TaxrCn8q6" class="link-contact">
+                        <i class="ri-map-pin-fill"></i>
+                        <span>View On Maps</span>
+                    </a>
+                </div>
+            </div>
+            <div class="contact-info">
+                <div>
+                    <h4 class="contact-tittle">Delivery</h4>
+                    <address class="contact-address">
+                        +62-857-0705-9705 <br>
+                        +62-898-7379-3798
+                    </address>
+                </div>
+                <div>
+                    <h4 class="contact-tittle">Attention</h4>
+
+                    <address class="contact-address">
+                        Monday - Saturday <br> 9AM - 11PM
+                    </address>
+                </div>
+            </div>
+            <div class="contact-images">
+                <div class="contactShape"></div>
+                <img src="asset/img/mandelivery.png" alt="images" class="delivery-people">
+            </div>
+        </div>
+    </section>
+    <!-- contact end-->
+    <!-- footer  -->
+    <footer>
+        <div class="data-footer">
+            <div class="footer-sosial-icon">
+                <h4 class="tittle-footer">Sosial Icon</h4>
+                <div class="sosialIcon">
+                    <a href="#" target="_blank" ><i class="ri-whatsapp-fill footer-social-link"></i></a>
+                    <a href="#" target="_blank"><i class="ri-instagram-fill footer-social-link"></i></a>
+                    <a href="#" target="_blank"><i class="ri-tiktok-fill footer-social-link"></i></a>
+                </div>
+            </div>
+            <div class="card-data">
+                <h4 class="tittle-footer">Contact</h4>
+                <ul class="ul">
+                    <li>📍 Jl. Kenikmatan No. 99, Jakarta</li>
+                    <li>📞 (021) 123-4567</li>
+                    <li>✉️ hello@burgerminion.com</li>
+                </ul>
+            </div>
+            <div class="payment">
+                <h4 class="tittle-footer">Payment Method</h4>
+                <div class="MethodPay">
+                    <img src="asset/img/BRI.jpg" alt="BRI">
+                    <img src="asset/img/BCA.jpg" alt="BCA">
+                    <img src="asset/img/mandiri.png" alt="Mandiri">
+                    <img src="asset/img/BNI.png" alt="">
+                    <img src="asset/img/dana (1).jpg" alt="DANA">
+                </div>
+            </div>
+        </div>
+        <p class="copyRight">&copy; 2025 Burger Minion. All Rights Reserved</p>
+    </footer>
+
+    <!-- modal start -->
+
+    <!-- modal menu -->
+    <div class="modalMenuContainer" id="modalMenu">
+        <div class="rowModalMenu" id="containerModalMenu">
+        </div>
+    </div>
+
+    <!-- modal checkout -->
+    <div class="modalCheckout" id="checkout">
+        <div class="rowCheckout">
+            <i class="ri-close-line closeCheckout" id="offModalCheckout"></i>
+            <h2 class="title-modalCheckout">Order Summary</h2>
+            <div class="summary-item">
+                <div class="summary-wrapper">
+                    <div class="summary-menu">
+                        <div class="imgMenuSummary">
+                            <img src="asset/img/Mushroom Swiss Burger.png" alt="" class="img-Menusummary">
+                        </div>
+                        <div class="data-MenuSummary">
+                            <h4 class="title-MenuSummary">Mushroom Swiss Burger</h4>
+                            <span class="price-MenuSummary">Rp 30.000</span>
+                            <p class="amountMenuSummary">Amount: <span id="Amount-order">2</span></p>
+                        </div>
+                    </div>
+                    <div class="voucher" id="voucher"><span>Voucher Burger Minion</span><i class="ri-arrow-right-s-line iconVoucer"></i></div>
+                    <div class="subtotal-order">
+                        <div class="subtotal-menu">
+                            <div class="subtotal-wrapper">
+                                <span class="title-sub">Subtotal Order<i class="ri-arrow-up-s-line"></i></span>
+                                <span>Rp100.000</span></div>
+                            <div class="sub">
+                                <p class="sub-data">Original Price <span>Rp120.000</span></p>
+                                <p class="sub-data">Discount Product <span>Rp20.000</span></p>
+                            </div>
+                        </div>
+                        <div class="subtottal-postage">
+                            <div class="subtotal-wrapper">
+                                <span class="title-sub">Subtotal Postage<i class="ri-arrow-up-s-line"></i>
+                                </span> 
+                                <span>Rp100.000</span></div>
+                            <div class="sub">
+                                <p class="sub-data">Postage <span>Rp120.000</span></p>
+                                <p class="sub-data">Discount Postage <span>Rp20.000</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-checkout">
+                    <h4 class="title-form">Form</h4>
+                    <input type="text" placeholder="Name" class="input" id="name">
+                    <input type="text" placeholder="Phone" class="input" id="phone">
+                    <textarea name="" id="address" placeholder="Address" class="input"></textarea>
+                    <textarea name="" id="address" placeholder="Notes" class="input"></textarea>
+                    <div class="delivery">
+                        <div class="delivery-wrapper">
+                            <div class="select input" id="deliverySelect">
+                                <span>Select Delivery Method:</span><i class="ri-expand-up-down-line"></i>
+                            </div>
+                        </div>
+                        <div class="option" id="optionDelivery">
+                            <div class="option-item collapsOption">Delivery</div>
+                            <div class="option-item collapsOption">Pick-Up</div>
+                        </div>
+                    </div>
+                    <div class="select-container">
+                        <div class="selectWrapper">
+                            <div class="select input" id="paymentMethodSelect"><span>Select Payment Method:</span><i class="ri-expand-up-down-line"></i></div>
+                        </div>
+                        <div class="option collaps-wrapper" id="optionPaymentMethod">
+                            <div class="transferPayment-container">
+                                <div class="option-item optionSelect"><img src="asset/img/transfer-icon.png" alt=""><span>Transfer</span> <i class="ri-arrow-down-s-line iconDropdown"></i></div>
+                                <div class="transferPayment-dropdown collaps-wrapper">
+                                    <div class="transferPayment-item collapsOption"><img src="asset/img/mandiri.png" alt=""><span>Mandiri</span></div>
+                                    <div class="transferPayment-item collapsOption"><img src="asset/img/BCA.jpg" alt=""><span>BCA</span></div>
+                                    <div class="transferPayment-item collapsOption"><img src="asset/img/BNI.png" alt=""><span>BNI</span></div>
+                                    <div class="transferPayment-item collapsOption"><img src="asset/img/BRI.jpg" alt=""><span>BRI</span></div>
+                                </div>
+                            </div>
+                            <div class="transferPayment-container">
+                                <div class="option-item optionSelect"><img src="asset/img/ewallet-icon.png" alt=""><span>E-Wallet</span> <i class="ri-arrow-down-s-line iconDropdown"></i></div>
+                                <div class="transferPayment-dropdown collaps-wrapper">
+                                    <div class="transferPayment-item collapsOption"><img src="asset/img/dana (1).jpg" alt=""><span>DANA</span></div>
+                                    <div class="transferPayment-item collapsOption"><img src="asset/img/ovo-icon.png" alt=""><span>OVO</span></div>
+                                    <div class="transferPayment-item collapsOption"><img src="asset/img/gopay-icon.jpg" alt=""><span>Gopay</span></div>
+                                    <div class="transferPayment-item collapsOption"><img src="asset/img/sPay-icon.png" alt=""><span>Shopee Pay</span></div>
+                                </div>
+                            </div>
+                            <div class="option-item collapsOption"><img src="asset/img/C O D.png" alt=""><span>COD</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="chechkout">
+                    <div class="total-chechkout">
+                        <p>Total</p>
+                        <span>Rp200.000</span>
+                    </div>
+                    <div class="btn-confirm">
+                        <label for="" class="provision">
+                            <input type="checkbox" name="" id="agreement" class="">
+                            <span>I agree with the <a href="#" target="_blank">terms & conditions</a></span>
+                        </label>
+                        <button id="confirm">Order</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- modal Payment -->
+    <!-- <div class="modal-payment">
+        <div class="row-modalPayment">
+            <h4>Payment</h4>
+            <article class="dataPayment">
+                
+            </article>
+        </div>
+    </div> -->
+
+    <!-- modal end -->
+
+    <!-- scroll reveal -->
+    <script src="asset/js/scrollreveal.min.js"></script>
+
+    <!-- swipper js -->
+     <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script> -->
+    <script src="asset/js/swiper-bundle.min.js"></script>
+
+    <!-- js -->
+    <script src="asset/js/main.js"></script>
+</body>
+</html>

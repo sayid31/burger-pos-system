@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <!-- css -->
+    <link rel="stylesheet" href="asset/css/dashboard.css">
+    <!-- font awesome icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- remix icon -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- sidebar start -->
+    <aside class="Sidebar">
+        <i class="ri-arrow-left-s-line icon-close"></i>
+        <div class="row-sidebar">
+            <div class="logo">
+                <div class="img-wrapper">
+                    <img src="asset/img/burger minion.png" alt="logo" class="img-logo">
+                </div>
+                <h2 class="title-logo">BURGER <br> MINION</h2>
+            </div>
+            <nav class="navSidebar">
+                <a href="dashboard.html" class="nav-item">
+                    <i class="ri-dashboard-line"></i><span>Overview</span>
+                </a>
+                <a href="sales.html" class="nav-item">
+                    <i class="ri-bar-chart-2-line"></i><span>Sales</span>
+                </a>
+                <a href="orders.html" class="nav-item">
+                    <i class="ri-shopping-cart-2-line"></i><span>Orders</span>
+                </a>
+                <a href="customer.html" class="nav-item">
+                    <i class="ri-user-3-line"></i><span>Customers</span>
+                </a>
+                <a href="inventory.html" class="nav-item">
+                    <i class="ri-archive-2-line"></i><span>Inventory</span>
+                </a>
+                <a class="nav-item" href="promo.html">
+                    <i class="ri-megaphone-line"></i><span>PromVent</span>
+                </a>
+            </nav>
+
+            <div class="action">
+                <h4 class="actionTittle">Action</h4>
+                <div class="garis"></div>
+            </div>
+            <div class="bottom">
+                <a href="settings.html" class="nav-item">
+                    <i class="ri-settings-3-line"></i><span>Settings</span>
+                </a>
+                <a href="logout.html" class="nav-item">
+                    <i class="ri-logout-box-line"></i><span>Logout</span>
+                </a>
+            </div>
+        </div>
+    </aside>
+    <!-- sidebar end -->
+    <!-- main content start-->
+    <main class="container">
+        <div class="row">
+            <div class="div-menu">
+                <i class="ri-menu-fill sidebar-icon"></i>
+                <h1 class="title-content">Dashboard</h1>
+            </div>
+            <section class="overview-top">
+                <article class="KPI">
+                    <div class="kpi-item">
+                        <div class="kpi-card card1">
+                            <h4 class="title-kpi">Today's Sales</h4>
+                            <h2 class="amount">Rp. 5.000.000</h2>
+                        </div>
+                        <div class="kpi-card card2">
+                            <h4 class="title-kpi">Burger Sold</h4>
+                            <h2 class="amount iconAmount"><i class="fa-solid fa-burger"></i> <span>350</span></h2>
+                        </div>
+                        <div class="kpi-card card3">
+                            <h4 class="title-kpi">Active Orders</h4>
+                            <h2 class="amount iconAmount"><i class="ri-calendar-line"></i> <span>25</span></h2>
+                        </div>
+                        <div class="kpi-card card4">
+                            <h4 class="title-kpi">Average Sales per Day</h4>
+                            <h2 class="amount Average-data">Rp. 20.000.000 <i class="ri-arrow-up-line"></i> <span>20%</span></h2>
+                                <!-- <i class="ri-arrow-up-line"></i>
+                                <span id="persenEverage">+10%</span> -->
+                        </div>
+                    </div>
+                    <div class="sales-trend">
+                        <h2>Sales Trend</h2>
+                        <figure style="height: 150px;">
+                            <canvas id="myChart"></canvas>
+                        </figure>
+                    </div>
+                </article>
+            </section>
+            <section class="overview-bottom">
+                <div class="containerdata">
+                    <article class="topOrders">
+                        <div class="peak-hours" >
+                            <h4 class="title-peak">Peak Hours</h4>
+                            <figure style=" height: 160px;">
+                                <canvas id="chartPeak" ></canvas>
+                            </figure>
+                        </div>
+                        <div class="best-seller">
+                            <div class="best-seller-chart">
+                                <h4 class="title-selling">Top Selling Menu</h4>
+                                <figure style="height: 120px; width: 300px;">
+                                    <canvas id="chartSelling" ></canvas>
+                                </figure>
+                            </div>
+                            <div class="best-seller-img">
+                                <div class="img-itemSelling">
+                                    <img src="asset/img/whopper burger crop.png" alt="img" class="img-selling">
+                                </div>
+                                <div class="data-selling">
+                                    <h4>whopper Minion</h4>
+                                    <p><span id="persenBuy">20%</span> of total sales</p>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="orderds">
+                        <h2 class="title-order">Add Order</h2>
+                        <table class="table-order">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Customer</th>
+                                    <th>Menu</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>102</td>
+                                    <td>Saipudin</td>
+                                    <td>Mashroom cheese Burger</td>
+                                    <td><div class="background completed"><span class="status">Completed</span></div></td>
+                                </tr>
+                                <tr>
+                                    <td>103</td>
+                                    <td>Saipudin</td>
+                                    <td>Mashroom cheese Burger</td>
+                                    <td><div class="background inProgres"><span class="status">In Progres</span></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>104</td>
+                                    <td>Saipudin</td>
+                                    <td>Mashroom cheese Burger</td>
+                                    <td><div class="background"><span class="status">Pending</span></div> </td>
+                                </tr>
+                                <tr>
+                                    <td>105</td>
+                                    <td>Saipudin</td>
+                                    <td>Mashroom cheese Burger</td>
+                                    <td><div class="background"><span class="status">Cancelled</span></div> </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </article>
+                </div>
+                <div class="program">
+                    <h4 class="title-program">Promo & Event</h4>
+                    <div class="rowProgram">
+                        <div class="promo1">
+                            <h3>Buy 2 Get 1  Free <br>
+                            <span>Wropper Minion</span></h3>
+                            <div class="img-promo1">
+                                <img src="asset/img/whopper burger.png" alt="img" class="wropper-promo1">
+                            </div>
+                        </div>
+                        <div class="event1">
+                            <h4>Minion Burger Day</h4>
+                            <img src="asset/img/minion music.png" alt="img" class="event-img1">
+                            <h5>Live Music</h5>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </main>
+    <!-- main content end-->
+
+    <!-- chart js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.5.0/chart.umd.min.js"></script>
+    <!-- js -->
+    <script src="asset/js/dashboard.js"></script>
+</body>
+</html>

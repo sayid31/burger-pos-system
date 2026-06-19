@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promo & Event</title>
+    <!-- css -->
+    <link rel="stylesheet" href="asset/css/promo.css">
+    <!-- font awesome icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- remix icon -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- flatpickr -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+</head>
+<body>
+    <!-- sidebar start -->
+    <aside class="Sidebar">
+        <i class="ri-arrow-left-s-line icon-close"></i>
+        <div class="row-sidebar">
+            <div class="logo">
+                <div class="img-wrapper">
+                    <img src="asset/img/burger minion.png" alt="logo" class="img-logo">
+                </div>
+                <h2 class="title-logo">BURGER <br> MINION</h2>
+            </div>
+            <nav class="navSidebar">
+                <a href="dashboard.html" class="nav-item">
+                    <i class="ri-dashboard-line"></i><span>Overview</span>
+                </a>
+                <a href="sales.html" class="nav-item">
+                    <i class="ri-bar-chart-2-line"></i><span>Sales</span>
+                </a>
+                <a href="orders.html" class="nav-item">
+                    <i class="ri-shopping-cart-2-line"></i><span>Orders</span>
+                </a>
+                <a href="customer.html" class="nav-item">
+                    <i class="ri-user-3-line"></i><span>Customers</span>
+                </a>
+                <a href="inventory.html" class="nav-item">
+                    <i class="ri-archive-2-line"></i><span>Inventory</span>
+                </a>
+                <a class="nav-item" href="promo.html">
+                    <i class="ri-megaphone-line"></i><span>PromVent</span>
+                </a>
+            </nav>
+
+            <div class="action">
+                <h4 class="actionTittle">Action</h4>
+                <div class="garis"></div>
+            </div>
+            <div class="bottom">
+                <a href="settings.html" class="nav-item">
+                    <i class="ri-settings-3-line"></i><span>Settings</span>
+                </a>
+                <a href="logout.html" class="nav-item">
+                    <i class="ri-logout-box-line"></i><span>Logout</span>
+                </a>
+            </div>
+        </div>
+    </aside>
+    <!-- sidebar end -->
+    <!-- content promo and event start-->
+    <main class="container">
+        <div class="row">
+            <h1 class="title-program">Promo & Event</h1>
+            <section class="content">
+                <div class="btnAdd">
+                    <button id="btnAddModal">AddProgram</button>
+                </div>
+                <div class="container-table">
+                    <table class="table-program">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Type</th>
+                                <th>Status</th>
+                                <th>Periode</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Buy 1 Get 1 Burger</td>
+                                <td>BOGO</td>
+                                <td><span class="badge active">Aktif</span></td>
+                                <td>01-09-2025 s/d 15-09-2025</td>
+                                <td> <div class="btn">
+                                    <button>Edit</button>
+                                    <button>Hapus</button>
+                                </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </main>
+    <!-- content promo and event end-->
+    <!-- modal -->
+    <div class="modal-box" id="modal">
+        <div class="row">
+            <i class="ri-close-line close" id="closeModal"></i>
+            <h2 class="title-modal">Add Program</h2>
+            <form action="" class="form-Add" id="form">
+                <div class="form-item">
+                    <label for="" class="label">Title</label>
+                    <input type="text" class="input" placeholder="Enter Title">
+                </div>
+                <div class="form-item">
+                    <label for="" class="label">Type</label>
+                    <input type="text" class="input" placeholder="Enter Type">
+
+                </div>
+                <div class="form-item">
+                    <div class="label">Status</div>
+                    <div class="input input-div"><span>Select Status</span><i class="ri-expand-up-down-line"></i></div>
+                    <div class="option">
+                        <div class="option-item">Active</div>
+                        <div class="option-item">Inactive</div>
+                    </div>
+                </div>
+                <div class="form-item">
+                    <label for="" class="label">Periode</label>
+                    <input type="text" id="dateRange" class="input" placeholder="Select Date">
+                </div>
+                <div class="form-item">
+                    <label for="" class="label">Image</label>
+                    <input type="file" class="input">
+                </div>
+                <div class="form-item">
+                    <label for="" class="label">Description</label>
+                    <textarea name="" id="" class="input" placeholder="Enter Description"></textarea>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- flatickr js -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <!-- js -->
+     <script src="asset/js/promo.js"></script>
+</body>
+</html>
