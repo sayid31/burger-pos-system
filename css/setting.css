@@ -1,0 +1,328 @@
+:root{
+    --Merah: rgb(214, 40, 40);
+    --Kuning-Emas:rgb(247, 127, 0);
+    --Hijau-Segar: rgb(112, 193, 179);
+    --Cokelat-Roti: rgb(107, 66, 38);
+    --Putih-Bersih: rgb(248, 249, 250);
+    --MerahKuning: linear-gradient(135deg, rgb(214, 40, 40), rgb(247, 127, 0));
+    --KuningHijauSegar: linear-gradient(180deg, rgb(247, 127, 0), rgb(112, 193, 179));
+    --hijauPutih: linear-gradient(180deg, rgb(112, 193, 179), rgb(248, 249, 250));
+    --cokelat-merahgelap: linear-gradient(160deg, rgb(107, 66, 38), rgb(214, 40, 40));
+    --cokelat-putih: linear-gradient(180deg, rgb(107, 66, 38), rgb(248, 249, 250));
+    --hijauLime: linear-gradient(160deg, rgb(112, 193, 179), rgb(173, 255, 47));
+    --merahBataEmas: linear-gradient(135deg, rgb(178, 34, 34), rgb(255, 215, 0));
+    --cokelatKopiKaramel: linear-gradient(160deg, rgb(78, 52, 46), rgb(255, 140, 0));
+    --hijauSegarDaun: linear-gradient(180deg, rgb(112, 193, 179), rgb(46, 139, 87));
+    --emasPutih: linear-gradient(135deg, rgb(255, 215, 0), rgb(250, 250, 240));
+    --merahHitamElegan: linear-gradient(135deg, rgb(214, 40, 40), rgb(34, 34, 34));
+    --emasKrem: linear-gradient(135deg, rgb(247, 127, 0), rgb(255, 239, 213));
+    --hijauLime: linear-gradient(160deg, rgb(112, 193, 179), rgb(173, 255, 47));
+    --cokelatEmas: linear-gradient(135deg, rgb(107, 66, 38), rgb(247, 127, 0));
+    --merahOranye: linear-gradient(135deg, rgb(214, 40, 40), rgb(255, 87, 34));
+}
+
+*{
+    outline: none;
+    border: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    display: flex;
+}
+
+/* startsidebar styling*/
+.Sidebar{
+    background-color: var(--Merah);
+    height: 100vh;
+    width: 200px;
+    overflow-y: auto;
+    position: relative;
+    padding-bottom: 2rem;
+}
+
+.icon-close{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--Putih-Bersih);
+    display: none;
+    cursor: pointer;
+}
+
+/* scrolbar sidebar */
+.Sidebar::-webkit-scrollbar{
+    width: 6px;
+}
+
+.Sidebar::-webkit-scrollbck{
+    background: transparent;
+}
+
+.Sidebar::-webkit-scrollbar-thumb{
+    background: rgba(248, 249, 250,.5);
+    border-radius: 1rem;
+}
+
+.Sidebar::-webkit-scrollbar-thumb:hover{
+    background: rgb(248, 249, 250);
+}
+
+.row-sidebar{
+    display: grid;
+    row-gap: 1rem;
+    /* justify-items: center;
+    justify-items: center; */
+}
+
+/* logo sidebar */
+.logo{
+    padding: 1rem 1.5rem;
+}
+
+.img-wrapper{
+    text-align: center;
+}
+
+.img-logo{
+    width: 80px;
+}
+
+.title-logo{
+    font-size: 1.3rem;
+    font-weight: 900;
+    color: var(--Putih-Bersih);
+    line-height: 1.3rem;
+    text-align: center;
+}
+
+/* navigation sidebar */
+.navSidebar{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 0 1rem;
+}
+
+.nav-item{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--Putih-Bersih);
+    padding: 10px 12px;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: background .3s;
+}
+
+.nav-item i{
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.nav-item:hover{
+    background:rgba(255,255,255,.12);
+}
+
+.nav-item:active{
+    background-color: #ffd54f;
+    color: #222;
+}
+
+/* action navigation sidebar */
+.action{
+    display: grid;
+    row-gap: .7rem;
+    padding-inline: 1rem;
+}
+
+.actionTittle{
+    font-size: 1.2rem;
+    color: rgba(255, 215, 0, .5);
+    text-align: center;
+    font-weight: 900;
+}
+
+.garis{
+    width: 100%;
+    height: 2px;
+    background-color: rgba(255, 215, 0, .5);
+
+}
+
+.bottom{
+    padding: 0 1rem;
+}
+/* end sidebar styling */
+
+/* main setting styling start */
+.container-setting{
+    padding: 1.5rem 3rem;
+    background: var(--Putih-Bersih);
+    flex: 1;
+}
+
+.row-setting{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.title-setting{
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: rgb(247, 127, 0);
+    margin-left: 2rem;
+}
+
+.setting-content{
+    display: grid;
+    grid-template-columns: .5fr 1.5fr;
+    height: 430px;
+}
+
+.form{
+    background-color: rgb(247, 127, 0);
+    padding: 1rem;
+    border-radius: .3rem 0 0 .3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-form{
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--Putih-Bersih);
+}
+
+.form-item{
+    display: flex;
+    flex-direction: column;
+    gap: .7rem;
+}
+
+.input{
+    width: 100%;
+    background-color: var(--Putih-Bersih);
+    color: var(--Hijau-Segar);
+    font-size: .9rem;
+    font-weight: 550;
+    padding: .3rem .8rem;
+    border-radius: .2rem;
+}
+
+.input::placeholder{
+    color: rgba(112, 193, 179,.5);
+}
+
+.select-item{
+    display: flex;
+    flex-direction: column;
+    gap: .7rem;
+}
+
+.select{
+    color: rgba(112, 193, 179,.5);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.option{
+    /* background-color: var(--Hijau-Segar); */
+    color: var(--Kuning-Emas);
+    display: none;
+    flex-direction: column;
+    gap: .5rem;
+    padding: .5rem 1rem;
+    border-radius: .2rem;
+    background-color: rgba(255,255,255,.4);
+}
+
+.option.active{
+    display: flex;
+}
+
+.option-item{
+    padding: .3rem;
+    background-color: var(--Putih-Bersih);
+    border-radius: .2rem;
+    font-size: .9rem;
+    font-weight: 700;
+}
+
+.btn_add{
+    text-align: center;
+}
+
+.btn_add button{
+    background: var(--Hijau-Segar);
+    padding: .3rem 1rem;
+    border-radius: .5rem;
+    color: var(--Putih-Bersih);
+    font-size: 1rem;
+    font-weight: 700;
+    transition: background .3s ease;
+    cursor: pointer;
+}
+
+.btn_add button:hover{
+    background: rgba(112, 193, 179,.8);
+}
+
+.table-container{
+    background-color: var(--Hijau-Segar);
+    padding: 1rem;
+    border-radius: 0 .3rem .3rem 0;
+    overflow-y: auto;
+}
+
+.title-table{
+    font-size: 1.5rem;
+    color: var(--Putih-Bersih);
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: .8rem;
+}
+
+.table-setting{
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+th:nth-child(odd),
+td:nth-child(odd){
+    background: rgba(248, 249, 250,.5);
+}
+
+th:nth-child(even),
+td:nth-child(even){
+    background: rgba(247, 127, 0,.5);
+}
+
+th,td{
+    padding: .3rem;
+    border-bottom: 1px solid rgba(112, 193, 179,.8);
+    color: rgb(34, 34, 34);
+    font-size: .8rem;
+}
+
+th{
+    font-weight: 750;
+}
+
+td{
+    font-weight: 550;
+}
+/* main setting styling end */
